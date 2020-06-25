@@ -28,12 +28,11 @@ import TodoList from "@/components/TodoList";
 import AddTodo from "@/components/AddTodo";
 import Loader from "@/components/Loader";
 export default {
-  name: "App",
   data() {
     return {
       todos: [],
       loading: true,
-      filter: "all",
+      filter: "all"
     };
   },
 
@@ -42,8 +41,8 @@ export default {
     fetch(
       "https://raw.githubusercontent.com/BenBatton/online-store-api/master/catalogTest.json"
     )
-      .then((response) => response.json())
-      .then((json) => {
+      .then(response => response.json())
+      .then(json => {
         setTimeout(() => {
           this.todos = json;
           this.loading = false;
@@ -62,26 +61,26 @@ export default {
         return this.todos;
       }
       if (this.filter === "completed") {
-        return this.todos.filter((t) => t.completed);
+        return this.todos.filter(t => t.completed);
       }
       if (this.filter === "not-completed") {
-        return this.todos.filter((t) => !t.completed);
+        return this.todos.filter(t => !t.completed);
       }
-    },
+    }
   },
   methods: {
     removeTodo(id) {
-      this.todos = this.todos.filter((t) => t.id !== id);
+      this.todos = this.todos.filter(t => t.id !== id);
     },
     addTodo(newTodo) {
       this.todos.push(newTodo);
-    },
+    }
   },
   components: {
     TodoList,
     AddTodo,
-    Loader,
-  },
+    Loader
+  }
 };
 </script>
 

@@ -6,20 +6,20 @@
     </div>
 
     <Footer />
-    <Home />
+    <!-- <Home /> -->
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Home from "@/views/Home";
+// import Home from "@/views/Home";
 export default {
   components: {
     Header,
-    Footer,
-    Home,
+    Footer
+    // Home
   },
-  methods: {},
+  methods: {}
 };
 </script>

@@ -28,7 +28,6 @@ import TodoList from "@/components/TodoList";
 import AddTodo from "@/components/AddTodo";
 import Loader from "@/components/Loader";
 export default {
-  name: "App",
   data() {
     return {
       todos: [],
